@@ -68,6 +68,7 @@
         <div class="section-title" data-aos="fade-up">
           <h2>Cancer Detection Test</h2>
           <p>Ensure your safety</p>
+         
         </div>
 
         <div class="row">
@@ -79,10 +80,15 @@
           <div class="col-lg-6" data-aos="fade-left">
             <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
 
-
+              
                 <form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
                   <h2>TEST FOR DETECTION </h2><br>
                   <h4> Upload Patient Sequence in .txt format <br> </h4><br>
+                 <div class="new"> {% for message in get_flashed_messages() %}
+                  <p class="{{ message }}" style="color: red;">{{ message }}</p>
+              {% endfor %}
+            </div>
+                 
          <input type = "file" name = "file" />
          <input type = "submit"/>
       </form>  
